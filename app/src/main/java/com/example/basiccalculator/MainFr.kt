@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.basiccalculator.adapter.CalcAdapter
 import com.example.basiccalculator.databinding.FragmentMainFrBinding
 
 
@@ -21,7 +24,12 @@ class MainFr : Fragment(), View.OnClickListener {
         // Inflate the layout for this fragment
         val binding = FragmentMainFrBinding.inflate(inflater, container, false)
 
-        binding.btNumber0.setOnClickListener(this)
+        val adapter = CalcAdapter()
+        binding.rVHistory.adapter = adapter
+        binding.rVHistory.addItemDecoration(DividerItemDecoration(binding.rVHistory.context,
+        LinearLayoutManager.VERTICAL))
+
+        binding.btNumber0.setOnClickListener(this)gi
         binding.btNumber1.setOnClickListener(this)
         binding.btNumber2.setOnClickListener(this)
         binding.btNumber3.setOnClickListener(this)
@@ -45,6 +53,10 @@ class MainFr : Fragment(), View.OnClickListener {
 
         viewModel.currentCalcState.observe(viewLifecycleOwner, {
             binding.tVCalculations.text = it.toString()
+        })
+
+        viewModel.calcHistory.observe(viewLifecycleOwner, { calcList ->
+            adapter.submitList(calcList)
         })
 
         return binding.root
