@@ -1,13 +1,11 @@
 package com.example.basiccalculator
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.example.basiccalculator.databinding.FragmentMainFrBinding
 
 
@@ -33,6 +31,7 @@ class MainFr : Fragment(), View.OnClickListener {
         binding.btNumber7.setOnClickListener(this)
         binding.btNumber8.setOnClickListener(this)
         binding.btNumber9.setOnClickListener(this)
+        binding.btDot.setOnClickListener(this)
 
         binding.btAdd.setOnClickListener(this)
         binding.btBackSpace.setOnClickListener(this)
@@ -64,30 +63,24 @@ class MainFr : Fragment(), View.OnClickListener {
             R.id.bt_number9 -> CalcButton.BUTTON_9.value
             R.id.bt_number0 -> CalcButton.BUTTON_0.value
 
-            R.id.bt_add -> {
-                Expressions.BUTTON_ADD.value
-            }
-            R.id.bt_substract -> {
-                Expressions.BUTTON_SUBTRACT.value
-            }
-            R.id.bt_multiply -> {
-                Expressions.BUTTON_MULTIPLY.value
-            }
-            R.id.bt_divide -> {
-                Expressions.BUTTON_DIVIDE.value
-            }
-            R.id.percent -> {
-                Expressions.BUTTON_PERCENT.value
-            }
+
+            R.id.bt_dot -> Operator.BUTTON_DOT.value
+            R.id.bt_add -> Operator.BUTTON_ADD.value
+            R.id.bt_substract -> Operator.BUTTON_SUBTRACT.value
+            R.id.bt_multiply -> Operator.BUTTON_MULTIPLY.value
+            R.id.bt_divide -> Operator.BUTTON_DIVIDE.value
+            R.id.percent -> Operator.BUTTON_PERCENT.value
 
             R.id.bt_invalidate -> {
                 viewModel.removeAll()
                 ""
             }
+
             R.id.bt_backSpace -> {
                 viewModel.onBackSpaceClicked()
                 ""
             }
+            // equals button
             else -> {
                 viewModel.evaluateResult()
                 ""

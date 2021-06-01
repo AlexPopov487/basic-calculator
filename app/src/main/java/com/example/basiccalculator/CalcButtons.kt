@@ -14,11 +14,12 @@ enum class CalcButton(val value: Int) {
 
 }
 
-enum class Expressions(val value: String) {
+enum class Operator(val value: String) {
     BUTTON_MULTIPLY("*"),
     BUTTON_DIVIDE("/"),
     BUTTON_ADD("+"),
     BUTTON_SUBTRACT("-"),
     BUTTON_PERCENT("%"),
+    BUTTON_DOT(".")
 
 }

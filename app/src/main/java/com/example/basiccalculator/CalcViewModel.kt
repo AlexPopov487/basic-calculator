@@ -12,17 +12,17 @@ class CalcViewModel : ViewModel() {
         get() = _currentCalcState
 
     fun updateCalcText(value: String) {
-        if (_currentCalcState.value!!.endsWith(Expressions.BUTTON_ADD.value) ||
-            (_currentCalcState.value!!.endsWith(Expressions.BUTTON_PERCENT.value)) ||
-            (_currentCalcState.value!!.endsWith(Expressions.BUTTON_DIVIDE.value)) ||
-            (_currentCalcState.value!!.endsWith(Expressions.BUTTON_MULTIPLY.value)) ||
-            (_currentCalcState.value!!.endsWith(Expressions.BUTTON_SUBTRACT.value))
+        if (_currentCalcState.value!!.endsWith(Operator.BUTTON_ADD.value) ||
+            (_currentCalcState.value!!.endsWith(Operator.BUTTON_PERCENT.value)) ||
+            (_currentCalcState.value!!.endsWith(Operator.BUTTON_DIVIDE.value)) ||
+            (_currentCalcState.value!!.endsWith(Operator.BUTTON_MULTIPLY.value)) ||
+            (_currentCalcState.value!!.endsWith(Operator.BUTTON_SUBTRACT.value))
         ) {
-            if (value == Expressions.BUTTON_ADD.value ||
-                (value == Expressions.BUTTON_PERCENT.value) ||
-                (value == Expressions.BUTTON_DIVIDE.value) ||
-                (value == Expressions.BUTTON_MULTIPLY.value) ||
-                (value == Expressions.BUTTON_SUBTRACT.value)
+            if (value == Operator.BUTTON_ADD.value ||
+                (value == Operator.BUTTON_PERCENT.value) ||
+                (value == Operator.BUTTON_DIVIDE.value) ||
+                (value == Operator.BUTTON_MULTIPLY.value) ||
+                (value == Operator.BUTTON_SUBTRACT.value)
             ) {
                 return
             }
@@ -33,7 +33,7 @@ class CalcViewModel : ViewModel() {
 
     fun evaluateResult() {
         val result = ExpressionBuilder(_currentCalcState.value).build().evaluate()
-        _currentCalcState.value = result.toInt().toString()
+        _currentCalcState.value = result.toString()
     }
 
     fun removeAll() {

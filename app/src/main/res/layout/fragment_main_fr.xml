@@ -117,9 +117,19 @@
         android:layout_height="64dp"
         android:text="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/bt_number9"
+        app:layout_constraintEnd_toEndOf="@id/bt_number8"
         app:layout_constraintTop_toBottomOf="@id/bt_number7"
        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_dot"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:text="."
+        app:layout_constraintStart_toStartOf="@id/bt_number9"
+        app:layout_constraintEnd_toEndOf="@id/bt_number9"
+        app:layout_constraintTop_toBottomOf="@id/bt_number7"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
