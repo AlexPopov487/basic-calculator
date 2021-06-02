@@ -29,7 +29,7 @@ class MainFr : Fragment(), View.OnClickListener {
         binding.rVHistory.addItemDecoration(DividerItemDecoration(binding.rVHistory.context,
         LinearLayoutManager.VERTICAL))
 
-        binding.btNumber0.setOnClickListener(this)gi
+        binding.btNumber0.setOnClickListener(this)
         binding.btNumber1.setOnClickListener(this)
         binding.btNumber2.setOnClickListener(this)
         binding.btNumber3.setOnClickListener(this)
@@ -57,6 +57,7 @@ class MainFr : Fragment(), View.OnClickListener {
 
         viewModel.calcHistory.observe(viewLifecycleOwner, { calcList ->
             adapter.submitList(calcList)
+            binding.rVHistory.smoothScrollToPosition(0)
         })
 
         return binding.root

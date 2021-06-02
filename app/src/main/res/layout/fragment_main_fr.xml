@@ -14,6 +14,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/hello_blank_fragment"
         android:textSize="36sp"
+        android:textColor="@color/color_text_icons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,98 +22,78 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/numbers_layout"
         android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tV_calculations">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number1"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/numberButton"
             android:text="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number2"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            style="@style/numberButton"
             android:text="2"
             app:layout_constraintStart_toEndOf="@id/bt_number1"
             app:layout_constraintTop_toTopOf="@id/bt_number1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number3"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            style="@style/numberButton"
             android:text="3"
             app:layout_constraintStart_toEndOf="@id/bt_number2"
             app:layout_constraintTop_toTopOf="@id/bt_number1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number4"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/numberButton"
             android:text="4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bt_number1" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number5"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            style="@style/numberButton"
             android:text="5"
             app:layout_constraintStart_toEndOf="@id/bt_number4"
             app:layout_constraintTop_toTopOf="@id/bt_number4" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number6"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            style="@style/numberButton"
             android:text="6"
             app:layout_constraintStart_toEndOf="@id/bt_number5"
             app:layout_constraintTop_toTopOf="@id/bt_number4" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number7"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/numberButton"
             android:text="7"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bt_number4" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number8"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            style="@style/numberButton"
             android:text="8"
             app:layout_constraintStart_toEndOf="@id/bt_number7"
             app:layout_constraintTop_toTopOf="@id/bt_number7" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number9"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
+            style="@style/numberButton"
             android:text="9"
             app:layout_constraintStart_toEndOf="@id/bt_number8"
             app:layout_constraintTop_toTopOf="@id/bt_number7" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_number0"
+            style="@style/numberButton"
             android:layout_width="0dp"
-            android:layout_height="64dp"
             android:text="0"
             app:layout_constraintEnd_toEndOf="@id/bt_number8"
             app:layout_constraintStart_toStartOf="parent"
@@ -120,8 +101,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_dot"
+            style="@style/numberButton"
             android:layout_width="0dp"
-            android:layout_height="64dp"
             android:text="."
             app:layout_constraintEnd_toEndOf="@id/bt_number9"
             app:layout_constraintStart_toStartOf="@id/bt_number9"
@@ -134,58 +115,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="2"
+        android:background="#FF9800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/numbers_layout"
-        app:layout_constraintTop_toTopOf="@id/numbers_layout"
-
-        >
+        app:layout_constraintTop_toTopOf="@id/numbers_layout">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_backSpace"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="&lt;" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_invalidate"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="AC" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_multiply"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="X" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_divide"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="/" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_add"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="+" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_substract"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="-" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_percent"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="%" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/bt_calculate"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            style="@style/operatorButton"
             android:text="=" />
 
 
@@ -196,8 +168,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:orientation="vertical"
         android:clipToPadding="true"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

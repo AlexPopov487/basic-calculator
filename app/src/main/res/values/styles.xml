@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-<!--    <style name="number_button" parent="Widget.MaterialComponents.Button">-->
-<!--        <item name="android:fontFamily">sans-serif-medium</item>-->
-<!--        <item name="android:textColor">color/black</item>-->
-<!--        <item name="android:textSize">32sp</item>-->
+    <style name="numberButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">32sp</item>
+        <item name="background">@android:color/transparent</item>
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+    </style>
 
-<!--    </style>-->
+    <style name="operatorButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">32sp</item>
+        <item name="backgroundTint">#FF9800</item>
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">72dp</item>
+    </style>
 
 
 </resources>

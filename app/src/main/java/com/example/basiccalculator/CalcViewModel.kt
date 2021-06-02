@@ -48,26 +48,28 @@ class CalcViewModel(application: Application) : AndroidViewModel(application) {
     fun evaluateResult() {
         val expressionValue = _currentCalcState.value
 
-        val result = ExpressionBuilder(_currentCalcState.value).build().evaluate()
-        _currentCalcState.value = result.toString()
+        try {
+            val result = ExpressionBuilder(_currentCalcState.value).build().evaluate()
+            _currentCalcState.value = result.toString()
+            viewModelScope.launch {
+                val dateFormatter = SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss")
+                val dateAndTime = dateFormatter.format(Date())
+                val date = dateAndTime.split(" ")[0]
+                val time = dateAndTime.split(" ")[1]
 
-        viewModelScope.launch {
-            val dateFormatter = SimpleDateFormat("dd/MMMM/yyyy HH:mm:ss")
-            val dateAndTime = dateFormatter.format(Date())
-            val date = dateAndTime.split(" ")[0]
-            val time = dateAndTime.split(" ")[1]
+                val expressionAndResult = "$expressionValue = $result"
 
-            val expressionAndResult = "$expressionValue = $result"
-
-            repository.save(
-                Calculations(
-                    expression = expressionAndResult,
-                    date = date,
-                    time = time
+                repository.save(
+                    Calculations(
+                        expression = expressionAndResult,
+                        date = date,
+                        time = time
+                    )
                 )
-            )
+            }
+        } catch (e: Exception) {
+            _currentCalcState.value = "ERROR"
         }
-
     }
 
     fun removeAll() {
