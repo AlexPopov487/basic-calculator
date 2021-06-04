@@ -82,7 +82,7 @@ class MainFr : Fragment(), View.OnClickListener {
             R.id.bt_substract -> Operator.BUTTON_SUBTRACT.value
             R.id.bt_multiply -> Operator.BUTTON_MULTIPLY.value
             R.id.bt_divide -> Operator.BUTTON_DIVIDE.value
-            R.id.percent -> Operator.BUTTON_PERCENT.value
+            R.id.bt_percent -> Operator.BUTTON_PERCENT.value
 
             R.id.bt_invalidate -> {
                 viewModel.removeAll()

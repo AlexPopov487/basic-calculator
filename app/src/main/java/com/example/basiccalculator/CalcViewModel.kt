@@ -27,13 +27,13 @@ class CalcViewModel(application: Application) : AndroidViewModel(application) {
 
     fun updateCalcText(value: String) {
         if (_currentCalcState.value!!.endsWith(Operator.BUTTON_ADD.value) ||
-            (_currentCalcState.value!!.endsWith(Operator.BUTTON_PERCENT.value)) ||
+//            (_currentCalcState.value!!.endsWith(Operator.BUTTON_PERCENT.value)) ||
             (_currentCalcState.value!!.endsWith(Operator.BUTTON_DIVIDE.value)) ||
             (_currentCalcState.value!!.endsWith(Operator.BUTTON_MULTIPLY.value)) ||
             (_currentCalcState.value!!.endsWith(Operator.BUTTON_SUBTRACT.value))
         ) {
             if (value == Operator.BUTTON_ADD.value ||
-                (value == Operator.BUTTON_PERCENT.value) ||
+//                (value == Operator.BUTTON_PERCENT.value) ||
                 (value == Operator.BUTTON_DIVIDE.value) ||
                 (value == Operator.BUTTON_MULTIPLY.value) ||
                 (value == Operator.BUTTON_SUBTRACT.value)
