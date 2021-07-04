@@ -11,3 +11,10 @@ A basic calculator android app written in Kotlin.
 **What needs to be improved:**
 * I did't really get how to implement a proper percentage calculation of a given number. 
 Since I concinder this a kind of a toy app, I didn't really bother trying to implement this feature. However, I'm always open for any suggestions 😇
+
+
+**SCREENSHOTS**
+
+![Screenshot1](https://github.com/AlexPopov487/basic-calculator/blob/master/Screenshots/screenshot0.png)
+![Screenshot2](https://github.com/AlexPopov487/basic-calculator/blob/master/Screenshots/screenshot1.png)
+![Screenshot3](https://github.com/AlexPopov487/basic-calculator/blob/master/Screenshots/error_state.png)
