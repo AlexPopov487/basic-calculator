@@ -1,4 +1,6 @@
 # basic-calculator
+![Icon](https://raw.github.com/AlexPopov487/basic-calculator/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png)
+
 
 A basic calculator android app written in Kotlin. 
 
