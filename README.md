@@ -10,7 +10,8 @@ A basic calculator android app written in Kotlin.
 
 **What needs to be improved:**
 * I did't really get how to implement a proper percentage calculation of a given number. 
-Since I concinder this a kind of a toy app, I didn't really bother trying to implement this feature. However, I'm always open for any suggestions 😇
+Since I concinder this a kind of a toy app, I didn't really bother trying to implement this feature.
+So for now, the percentage sigh (%) perform modulo operation. However, I'm always open for any suggestions 😇
 
 
 **SCREENSHOTS**
